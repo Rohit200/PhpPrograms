@@ -1,7 +1,9 @@
 <?php
 include 'Util.php';
 echo "Enter the number \n";
-$n=getInt();
+$n=getString();
+if (filter_var($n, FILTER_VALIDATE_INT))
+{
 for($i=2;$i<=$n;$i++)
 {
 $r=prime($i);
@@ -17,5 +19,8 @@ if($r==true)
     }
 }
 }
+}
+else
+echo "Enter the natural number only \n";
 
 ?>

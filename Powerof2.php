@@ -1,19 +1,14 @@
 <?php
 include 'Utility.php';
 echo "Enter the number \n";
-$num=getInt();
-$fix=2;
-if($num<31)
+$num=getString();
+if (filter_var($num, FILTER_VALIDATE_INT))
 {
-for($i=1;$i<=$num;$i++)
-{
-	$res=pow($fix,$i);
-	echo (pow($fix,$i)."\n");
-	leap($res);
-	echo "\n";
-	}
+powerof2($num);
 }
 else
-	echo "Please enter the number below 31";
+{
+	echo "Entered the whole positive number \n";
+}
 
-	?>
+?>

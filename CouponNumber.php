@@ -2,35 +2,13 @@
 include 'Utility.php';
 
 echo "Enter the total coupon number to be stored in Array \n";
-$n=getInt();
-$a1=array();
-for($i=0;$i<$n;$i++)
+$n = getString();
+$a1 = array();
+if (filter_var($n, filt))
+// if (filter_var($n, FILTER_VALIDATE_INT))
 {
-    $d=rand();
-    if($i==0)
-    {
-    $a1[0]=$d;
-    }
-    else
-    {
-        $j=$i;
-        for($k=0;$k<$j;$k++)
-        {
-            if($a1[$k]==$d)
-            {
-                $i--;
-                   break;
-            }
-        }
-        if($j>=$i)
-           $a1[$i]=$d;
-    }
+    couponNumber($n, $a1);
+} else {
+    echo "Entered the positive whole number";
 }
-for($i=0;$i<count($a1);$i++)
-{
-    echo $a1[$i]."\n";
-    
-}
-print_r($a1);
-
 ?>

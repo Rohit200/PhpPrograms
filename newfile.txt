@@ -1,0 +1,6 @@
+
+Amount should be positive whole number 04:59:57pm 2018/07/17
+Amount should be positive whole number 05:02:38pm 2018/07/17
+Value must be numeric only 11:10:07am 2018/07/18
+Value must be positive integer only 11:49:05am 2018/07/18
+Value must be positive integer only 11:51:48am 2018/07/18
