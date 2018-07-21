@@ -1,13 +1,14 @@
 <?php
-include 'Utility.php';
+include 'Utility1.php';
+$u1=new Utility1();
 echo "Enter 1 for CtoFconversation \n Enter 2 for FtoCconversation \n";
-$n = getString();
+$n = $u1->getString();
 if (filter_var($n, FILTER_VALIDATE_INT)) {
     switch ($n) {
         case 1:echo "Enter the temperature in celcius only \n";
-            $t = getString();
+            $t = $u1->getString();
             if (is_numeric($t)) {
-                $t1 = CtoFconvert($t);
+                $t1 = Utilitiy1::CtoFconvert($t);
                 echo "Temperature in Fahrenhiet is " . $t . "\n";
             } else {
                 echo "Enter only numeric value \n";
@@ -16,9 +17,9 @@ if (filter_var($n, FILTER_VALIDATE_INT)) {
             break;
 
         case 2:echo "Enter the temperature in Fahrenhiet only \n";
-            $t = getString();
+            $t = $u1->getString();
             if (is_numeric($t)) {
-                $t = FtoCconvert($t);
+                $t = Utility1::FtoCconvert($t);
                 echo "Temperature in celcius is " . $t . "\n";
             } else {
                 echo "Enter only numeric value \n";

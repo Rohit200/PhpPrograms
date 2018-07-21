@@ -1,11 +1,11 @@
 <?php
-include 'Utility.php';
+include 'Utility1.php';
 include 'Log.php';
 $log = new Log();
 echo "Enter the number \n";
-$n = getString();
+$n = Utility1::getString();
 try {
-    $s = tobinary($n);
+    $s = Utility1::tobinary($n);
     $s1 = strrev($s);
     echo $s1;
 } catch (Exception $exp) {

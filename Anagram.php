@@ -9,13 +9,14 @@ $s3 =getString();
 if (is_numeric($s1) || is_numeric($s3)) {
     echo "Enter the string only \n";
 } else {
-    $s2 = removeSpace($s1);
-    $s4 = removeSpace($s3);
+    $s2=strtoupper($s1);
+    $s4=strtoupper($s3);
     $c5 = sortChar($s2);
     $c6 = sortChar($s4);
+    
     if (strlen($c5) == strlen($c6)) {
         $n = is_anagram($c5, $c6);
-        if ($n == true) {
+        if ($n == 1) {
             echo "Anagram \n";
         } else {
             echo "Not Anagram \n";

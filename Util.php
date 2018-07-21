@@ -5,6 +5,12 @@ function getString()
     return $name;
 
 }
+function getStr()
+{
+    return fgets(STDIN, 1024);
+   
+
+}
 
 function getInt()
 {
@@ -114,3 +120,4 @@ function AnagramInt($n, $s)
     }
 
 }
+?>

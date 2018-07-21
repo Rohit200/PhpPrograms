@@ -9,7 +9,7 @@
 	   {
 		   $a=flipcoin($num);
 		   echo "Total number of heads is ".$a[0]."\n";
-		   echo  "Total number of heads is ".$a[1]."\n";
+		   echo  "Total number of tails is ".$a[1]."\n";
 	   }
 	   else
 		   echo "Please enter the positive value greater than 0\n";

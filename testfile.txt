@@ -1,4 +1,1 @@
-Pankaj,Arun,Rohit,Ankit,Manoj,Pankaj,Vikas,Prasant,Amount should be positive whole numberAmount should be positive whole number01:17:23pm
-Amount should be positive whole number01:21:03pm2018/07/17
-Amount should be positive whole number01:21:39pm2018/07/17
-Amount should be positive whole number 01:22:51pm 2018/07/17
+Pankaj,Arun,Rohit,Ankit,Manoj,Pankaj,Vikas,Prasant,67,34,78,11,36,98,78,64,Nausad,

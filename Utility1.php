@@ -1,10 +1,16 @@
 <?php
-
+class Utility1
+{
 function getString()
 {
     fscanf(STDIN, "%s", $name);
     return $name;
 
+}
+function getboolean()
+{
+    fscanf(STDIN, "%b", $bol);
+    return $bol;
 }
 function leap($year)
 {
@@ -309,12 +315,12 @@ function insertionInteger($a)
     }
     return $a;
 }
-function CtoFconvert($c)
+public static function CtoFconvert($c)
 {
     $f = ($c * 9 / 5) + 32;
     return $f;
 }
-function FtoCconvert($f)
+public static function FtoCconvert($f)
 {
     $c = ($f - 32) * 5 / 9;
     return $c;
@@ -377,9 +383,8 @@ function flipcoin($num)
     $head = 0;
     $tail = 0;
     for ($i = 1; $i <= $num; $i++) {
-        $d = rand(0, 10);
-       //echo $d."\n";
-        if ($d < 5) {
+        $d = rand(0, 1);
+        if ($d < 0.5) {
             $tail++;
         } else {
             $head++;
@@ -469,7 +474,7 @@ function big($a2, $head, $last)
     return big($a2, $head + 1, $last);
 
 }
-function monthlyPayment($P, $R, $Y)
+public static function monthlyPayment($P, $R, $Y)
 {
     if (is_numeric($R) && is_numeric($P) && is_numeric($Y)) {
         $n = $Y * 12;
@@ -482,7 +487,7 @@ function monthlyPayment($P, $R, $Y)
     }
 
 }
-function tobinary($n)
+public static function tobinary($n)
 {
     $a1 = array();
     $k = 0;
@@ -499,7 +504,7 @@ function tobinary($n)
     }
 
 }
-function sqrt1($c)
+public static function sqrt1($c)
 {
     $c = abs($c);
     $t = $c;
@@ -605,7 +610,7 @@ function UTurn($str, $r)
     } else if ($r == 4 ) {
         $str[1][0] = "0";
     } else if ($r == 5 ) {
-        $str[1][1] = "0";
+        $str[1][1] = "0";  
     } else if ($r == 6 ) {
         $str[1][2] = "0";
     } else if ($r == 7 ) {
@@ -663,3 +668,6 @@ function checkDuplicate($a, $r)
     }
 
 }
+
+}
+?>
