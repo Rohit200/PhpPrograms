@@ -48,7 +48,7 @@ class LinkedList
         $r = 0;
         for ($i = 0; $i < $index; $i++) {
             if ($i == $index - 1) {
-                $r = $node->readNode();
+                $r = $node->data;
             }
             $node = $node->next;
         }
@@ -74,45 +74,60 @@ class LinkedList
         }
 
     }
-    public function searchDelete($data1)
+    public function searchString($data1)
     {
-        $previous = null;
         $node = $this->firstNode;
-        while ($node == null) {
-            if ($node->readNode() == $data1) {
-                $node = $node->next;
-                return true;
-                if ($previous == null) {
-                    $previous = $node;
-                } else {
-                    $previous->next = $node;
-                }
-
-            } else {
-                $previous = $node;
-                $node = $node->next;
+        while ($node != null) {
+            if (strcmp($node->readNode(),$data1)==0) {
+                break;
             }
+            $node = $node->next;
         }
+        if ($node == null) {
+            return false;
+        } else {
+            return true;
+        }
+
     }
+
     public function deleteNode($key)
     {
         $current = $this->firstNode;
         $previous = $this->firstNode;
-        
-        while($current->data != $key)
-        {
-            if($current->next == NULL)
-                return NULL;
-            else
-            {
+   for($i=1;$i<=$this->count;$i++)
+   {
+        while ($current->readNode() != $key) {
+            if ($current->next == null) {
+                return null;
+            } else {
                 $previous = $current;
                 $current = $current->next;
             }
         }
-        
-        if($current == $this->firstNode)
+
+        if ($current == $this->firstNode) {
             $this->firstNode = $this->firstNode->next;
-        else
-            $previous->next = $current->next;  
+        } else {
+            $previous->next = $current->next;
+        }
     }
+    }
+    public function sort() {
+		if ( $this->firstNode != NULL &&  $this->firstNode->next != NULL  ) {
+				for ( $i = 0; $i < $this->count; $i++ ) {
+					$temp = NULL;
+					$current = $this->firstNode;
+					while ( $current != NULL ) {
+						if ( $current->next != NULL && $current->data > $current->next->data ) {
+							$temp = $current->data;
+							$current->data = $current->next->data;
+							$current->next->data = $temp;
+						}
+						$current = $current->next;
+					
+				}
+			}
+		}
+	}
 }

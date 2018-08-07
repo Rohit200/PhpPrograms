@@ -30,13 +30,15 @@ if(filter_var(FILTER_VALIDATE_INT))
         {
             echo "Number added in the list \n";
             $l1->addLast($k);
+            $l1->sort();
+            $l1->display();
         }
         else
         {
         echo "Number found and Deleted \n";
         $l1->deleteNode($k);
+        $l1->sort();
+        $l1->display();
         }
-    }
-
-$l1->display();
+        }
 ?>

@@ -33,7 +33,8 @@ for ($i = 0; $i < sizeof($a); $i++) {
     }
 
 }
-if ($i >= sizeof($a)) {
+$n=$st1->isEmpty();
+if ($n==1) {
     echo "Balanced String \n";
 } else {
     echo "not Balanced String \n";

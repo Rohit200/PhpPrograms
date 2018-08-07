@@ -9,11 +9,11 @@ function getString()
 function leap($year)
 {
     if ($year % 400 == 0) {
-        echo 'Leap Year';
+        return 1;
     } else if ($year % 100 != 0 && $year % 4 == 0) {
-        echo 'Leap Year';
+        return 1;
     } else {
-        echo 'Not Leap Year';
+        return 0;
     }
 
 }
@@ -108,7 +108,6 @@ function integerArray($row, $col, $a1)
         }
     }
 
-
     for ($i = 0; $i < $row; $i++) {
         for ($j = 0; $j < $col; $j++) {
             echo $a1[$i][$j] . " ";
@@ -124,7 +123,7 @@ function stringArray($row, $col, $a1)
             echo "Enter the Number in array" . "[" . $i . "]" . "[" . $j . "]" . "\n";
             $a1[$i][$j] = getString();
         }
-       
+
     }
     for ($i = 0; $i < $row; $i++) {
         for ($j = 0; $j < $col; $j++) {
@@ -206,7 +205,7 @@ function binaryIntegerN($a, $k)
     $low = 0;
     $high = sizeof($a1);
     while ($low <= $high) {
-    $mid = floor(($high + $low) / 2);
+        $mid = floor(($high + $low) / 2);
         if ($a1[$mid] < $k) {
             $low = $mid + 1;
         } else if ($a1[$mid] > $k) {
@@ -378,7 +377,7 @@ function flipcoin($num)
     $tail = 0;
     for ($i = 1; $i <= $num; $i++) {
         $d = rand(0, 10);
-       //echo $d."\n";
+        //echo $d."\n";
         if ($d < 5) {
             $tail++;
         } else {
@@ -546,7 +545,7 @@ function dayofweek($d, $m, $y)
     $x = $y0 + $y0 / 4 - $y0 / 100 + $y0 / 400;
     $m0 = $m + 12 * (14 - $m) / 12 - 2;
     $d0 = ($d + $x + 31 * $m0 / 12) % 7;
-    echo $a[$d0];
+    return $d0;
 }
 function CWinTest($str)
 {
@@ -598,21 +597,21 @@ function UTurn($str, $r)
 {
     if ($r == 1) {
         $str[0][0] = "0";
-    } else if ($r == 2 ) {
+    } else if ($r == 2) {
         $str[0][1] = "0";
-    } else if ($r == 3 ) {
+    } else if ($r == 3) {
         $str[0][2] = "0";
-    } else if ($r == 4 ) {
+    } else if ($r == 4) {
         $str[1][0] = "0";
-    } else if ($r == 5 ) {
+    } else if ($r == 5) {
         $str[1][1] = "0";
-    } else if ($r == 6 ) {
+    } else if ($r == 6) {
         $str[1][2] = "0";
-    } else if ($r == 7 ) {
+    } else if ($r == 7) {
         $str[2][0] = "0";
-    } else if ($r == 8 ) {
+    } else if ($r == 8) {
         $str[2][1] = "0";
-    } else if ($r == 9 ) {
+    } else if ($r == 9) {
         $str[2][2] = "0";
     }
     return $str;
@@ -636,17 +635,17 @@ function CTurn($str, $r)
         $str[0][0] = "X";
     } else if ($r == 2) {
         $str[0][1] = "X";
-    } else if ($r == 3 ) {
+    } else if ($r == 3) {
         $str[0][2] = "X";
     } else if ($r == 4) {
         $str[1][0] = "X";
-    } else if ($r == 5 ) {
+    } else if ($r == 5) {
         $str[1][1] = "X";
-    } else if ($r == 6 ) {
+    } else if ($r == 6) {
         $str[1][2] = "X";
-    } else if ($r == 7 ) {
+    } else if ($r == 7) {
         $str[2][0] = "X";
-    } else if ($r == 8 ) {
+    } else if ($r == 8) {
         $str[2][1] = "X";
     } else if ($r == 9) {
         $str[2][2] = "X";

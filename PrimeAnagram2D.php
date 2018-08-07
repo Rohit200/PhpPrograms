@@ -7,10 +7,12 @@ $r = getString();
 $row = $n / $r;
 $low = 0;
 $high = $r;
+$a1 = array(array(), array());
 $a = array(array(), array());
 if (filter_var($n, FILTER_VALIDATE_INT) && filter_var($r, FILTER_VALIDATE_INT)) {
     for ($i = 0; $i < $row; $i++) {
         $k = 0;
+        $k1=0;
         if ($i == 0) {
             $low = $low;
             $high = $high;
@@ -26,12 +28,18 @@ if (filter_var($n, FILTER_VALIDATE_INT) && filter_var($r, FILTER_VALIDATE_INT)) 
                         $a[$i][$k] = $j;
                         $k++;
                     }
-                }
+                } 
+                else
+                $a1[$i][$k1] = $j;
+                        $k1++;  
             }
-
+            
         }
     }
     print_r($a);
+    print_r($a1);
+   
 } else {
     echo "Enter only positive integer value \n";
 }
+?>

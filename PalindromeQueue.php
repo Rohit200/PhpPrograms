@@ -17,7 +17,7 @@ else
     }
     
    $i=count($a)-1;
-   while($i>count($a)/2)
+   while($que->isEmpty()!=1)
    {
        $k=$que->dequeue();
        if($a[$i]==$k)
@@ -33,7 +33,7 @@ else
    }
    $n=$que->isEmpty();
    echo $n."\n";
-   if($i<=count($a)/2)
+   if($i<sizeof($a)/2 &&$n==1)
    echo "Palindrome \n";
    else
    echo "Not Palindrome \n";

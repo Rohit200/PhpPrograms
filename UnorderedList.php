@@ -3,7 +3,7 @@ include 'Utility.php';
 include 'LinkedList.php';
 $a2=array();
 $l1=new LinkedList();
-$filecontents = file_get_contents('testfile.txt');
+$filecontents = file_get_contents('user.txt');
 $words = preg_split('/,+/',$filecontents, -1, PREG_SPLIT_NO_EMPTY);
 for( $i=0;$i < sizeof($words); $i++)
 {
@@ -27,20 +27,32 @@ echo "Enter the String to be search \n";
 $k=getString();
 if(is_numeric($k)!=1)
 {
-    $n=binaryString($a2,$k);
-    {
-        if($n==-1)
+    $k2=strtolower($k);
+    $k1=ucfirst($k2);
+    $n=$l1->searchString($k1);
+        if($n!=1)
         {
-            $myfile=fopen("testfile.txt","a");
-            fwrite($myfile,$k.",");
+            echo "String not found and added \n";
+            $myfile=fopen("user.txt","a");
+            fwrite($myfile,$k1.",");
             fclose($myfile);
-            $l1->addLast($k);
         }
         else
         {
         echo "String found \n";
+          $l1->deleteNode($k1);
+          unlink("user.txt");
+          $myfile=fopen("user.txt","a");
+          for($i=1;$i<$l1->size();$i++)
+          {
+              $k2=$l1->get($i);
+            fwrite($myfile,$k2.",");
+         
         }
-    }
+        fclose($myfile);
+        
+    } 
+    
 }
 $l1->display();
 ?>
