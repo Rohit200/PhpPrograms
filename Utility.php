@@ -432,8 +432,8 @@ function gambler($trails, $stack, $goal)
     $loss = 0;
     $i = 0;
     while ($i < $trails && $stack > 0 && $stack <= $goal) {
-        $d = rand(0, 1);
-        if ($d < 0.5) {
+        $d = rand(1, 10);
+        if ($d < 5) {
             $loss++;
             $stack--;
         } else {
