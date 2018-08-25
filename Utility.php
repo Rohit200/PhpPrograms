@@ -347,18 +347,21 @@ function powerof2($num)
 function couponNumber($n, $a)
 {
     for ($i = 0; $i < $n; $i++) {
-        $d = rand();
+        $d = rand(1,5);
         if ($i == 0) {
             $a1[0] = $d;
         } else {
             $j = $i;
-            for ($k = 0; $k < $j; $k++) {
+            $k = 0;
+            while( $k < $i)
+            { 
                 if ($a1[$k] == $d) {
                     $i--;
                     break;
                 }
+                $k++;
             }
-            if ($j >= $i) {
+             if ($k >= $j) {
                 $a1[$i] = $d;
             }
 
